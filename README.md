@@ -1,9 +1,6 @@
 <!-- Profile README for github.com/eigenverft -->
-
-<h1 align="center">Eigenverft</h1>
 <p align="center">
-  <strong>Build. Fit-out. Ship.</strong><br/>
-  <em>From code to keel.</em>
+  <img alt="Eigenverft mark" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/eigenverft-lockup-inter-600-90-centered.svg" width="750">
 </p>
 
 <p align="center">
@@ -39,6 +36,3 @@
 
 ---
 
-<p align="center">
-  <img alt="Eigenverft mark" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/eigenverft-lockup-inter-600-90-centered.svg" width="420">
-</p>
