@@ -23,14 +23,14 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.19170984"
-     inkscape:cx="2096.9189"
-     inkscape:cy="967.60811"
+     inkscape:cx="-52.162162"
+     inkscape:cy="1619.6351"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3" />
+     inkscape:current-layer="g3" />
   <defs
      id="defs1">
     <style
@@ -54,7 +54,8 @@
     <path
        class="teal"
        d="m 113.75,78.125 -50.625,28.75 h 38.75 z"
-       id="path3" />
+       id="path3"
+       style="fill:#ff7a1a;fill-opacity:1;stroke:#ff7a1a;stroke-opacity:1" />
   </g>
   <text
      class="word"
