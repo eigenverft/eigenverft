@@ -10,29 +10,28 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Brand tokens -->
   <style>
     :root{
       --eigen-navy:#0A1B2E;
       --eigen-teal:#00B3A6;
-      --eigen-navy-ink:#071320;
     }
-    /* Auto dark/light theme */
-    (function(){const d=document.documentElement;const dark=matchMedia('(prefers-color-scheme: dark)').matches;d.setAttribute('data-bs-theme',dark?'dark':'light');})();
-  </style>
-
-  <!-- Page styling -->
-  <style>
+    /* Hero card */
     .hero-card{
-      border:0; border-radius:1rem;
-      box-shadow:0 1px 2px rgba(0,0,0,.05), 0 12px 32px rgba(0,0,0,.08);
+      border:0; border-radius:1.25rem;
+      box-shadow:0 1px 2px rgba(0,0,0,.04), 0 16px 48px rgba(0,0,0,.08);
       background:
-        radial-gradient(1200px 400px at 0% -20%, rgba(0,179,166,.10), transparent 60%),
+        radial-gradient(900px 280px at 10% -20%, rgba(0,179,166,.12), transparent 55%),
         var(--bs-body-bg);
     }
-    .brand-mark{ max-width:120px; width:100%; height:auto }
-    .display-brand{ letter-spacing:-.02em; color:var(--eigen-navy) }
-    [data-bs-theme="dark"] .display-brand{ color:#e6edf3 }
+    .lockup{
+      width: clamp(260px, 42vw, 560px);
+      height: auto;
+      display:block;
+      margin-inline:auto;
+    }
+    .tagline{
+      letter-spacing: -.01em;
+    }
     .btn-eigen{
       --bs-btn-color:#042a28;
       --bs-btn-bg:var(--eigen-teal);
@@ -41,40 +40,44 @@
       --bs-btn-hover-border-color:#00a497;
       --bs-btn-focus-shadow-rgb:0,179,166;
     }
-    .section-title{ font-weight:600 }
-    .muted{ color:var(--bs-secondary-color) }
-    .divider{ opacity:.2 }
+    .divider{opacity:.2}
   </style>
+
+  <script>
+    // Respect OS dark/light for Bootstrap theme
+    (() => {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-bs-theme', prefersDark ? 'dark' : 'light');
+    })();
+  </script>
 </head>
 <body>
   <main class="container py-5">
     <!-- HERO -->
     <section class="card hero-card p-4 p-lg-5">
-      <div class="row align-items-center g-4">
-        <div class="col-12 col-md-auto text-center text-md-start">
-          <!-- Absolute RAW link to your SVG -->
-          <img
-            class="brand-mark img-fluid"
-            src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/eigenverft-lockup-inter-600-90-centered_man.svg"
-            alt="Eigenverft logo">
-        </div>
-        <div class="col">
-          <h1 class="display-5 fw-semibold mb-1 display-brand">Eigenverft</h1>
-          <p class="lead mb-3 muted">
-            <strong>Build. Fit-out. Ship.</strong>&nbsp;•&nbsp; From code to keel.
-          </p>
-          <div class="d-flex gap-2 flex-wrap">
-            <a class="btn btn-eigen px-3" href="mailto:eigenverft@outlook.com">Contact</a>
-            <a class="btn btn-outline-secondary px-3" href="https://github.com/eigenverft">GitHub</a>
-          </div>
-        </div>
+      <!-- Use the horizontal lockup as the brand to avoid awkward icon+H1 stacking -->
+      <img
+        class="lockup"
+        src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/docs/eigenverft-lockup-inter-600-90-centered_man.svg"
+        alt="Eigenverft — Build. Fit-out. Ship. From code to keel.">
+
+      <!-- SEO-only H1 to keep the page semantically correct without duplicating the visual lockup -->
+      <h1 class="visually-hidden">Eigenverft</h1>
+
+      <p class="lead text-center text-body-secondary tagline mt-2">
+        <strong>Build. Fit-out. Ship.</strong> &nbsp;•&nbsp; From code to keel.
+      </p>
+
+      <div class="d-flex justify-content-center gap-2 flex-wrap mt-2">
+        <a class="btn btn-eigen px-3" href="mailto:eigenverft@outlook.com">Contact</a>
+        <a class="btn btn-outline-secondary px-3" href="https://github.com/eigenverft">GitHub</a>
       </div>
 
       <hr class="my-4 divider">
 
       <div class="row g-4">
         <div class="col-12 col-lg-4">
-          <h2 class="h5 section-title mb-2">What we ship</h2>
+          <h2 class="h5 fw-semibold mb-2">What we ship</h2>
           <ul class="mb-0">
             <li>Agent engines &amp; tools (orchestration, RAG)</li>
             <li>Web apps &amp; services (ASP.NET Core MVC/Blazor/Razor)</li>
@@ -82,7 +85,7 @@
           </ul>
         </div>
         <div class="col-12 col-lg-4">
-          <h2 class="h5 section-title mb-2">Tech stack</h2>
+          <h2 class="h5 fw-semibold mb-2">Tech stack</h2>
           <ul class="mb-0">
             <li>C# 12 / .NET 9</li>
             <li>ASP.NET Core MVC, Blazor, Razor Components</li>
@@ -91,9 +94,9 @@
           </ul>
         </div>
         <div class="col-12 col-lg-4">
-          <h2 class="h5 section-title mb-2">Get in touch</h2>
+          <h2 class="h5 fw-semibold mb-2">Get in touch</h2>
           <p class="mb-1">✉️ <a href="mailto:eigenverft@outlook.com">eigenverft@outlook.com</a></p>
-          <p class="mb-0 muted">© <span id="y"></span> Eigenverft</p>
+          <p class="mb-0 text-body-secondary">© <span id="y"></span> Eigenverft</p>
         </div>
       </div>
     </section>
@@ -102,7 +105,6 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
