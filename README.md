@@ -17,19 +17,18 @@
 ### What we ship
 - **Agent engines & tools** — orchestration, RAG, DevOps-ready.
 - **Web apps & services** — ASP.NET Core **MVC/Controllers**, **Blazor (Server/WASM)**, **Razor Components/Pages**.
-- **Developer UX** — klare APIs und reproduzierbare CI/CD-Pipelines.
+- **Developer UX** — clean APIs and reproducible CI/CD pipelines.
 
 ### Tech stack
 - **C# 12 / .NET 9**
-- **ASP.NET Core** (MVC/Controllers, **Blazor Server/WASM**, Razor Components/Pages), SignalR wo sinnvoll
-- **EF Core**, SQL Server / Azure SQL
-- **PowerShell 7.x** für Tooling/Automation
-- **GitHub Actions** für Build/Release
-- **Azure** (z. B. Key Vault, App Configuration) – *ohne* App Service Bindung
+- **ASP.NET Core** (MVC/Controllers, **Blazor Server/WASM**, Razor Components/Pages), SignalR where it makes sense
+- **EF Core**, SQL Server
+- **PowerShell 4.x** 7.x** for tooling/automation
+- **GitHub Actions** for build/release
 
 ### Conventions
-- Repo-Schema: `eigenverft-<area>-<name>`  
-  Beispiele: `eigenverft-agent`, `eigenverft-core`, `eigenverft-cloud`, `eigenverft-ui`, `eigenverft-ops`.
+- Repo naming: `eigenverft-<area>-<name>`  
+  Examples: `eigenverft-agent`, `eigenverft-core`, `eigenverft-cloud`, `eigenverft-ui`, `eigenverft-ops`.
 
 ### Contact
 - ✉️ **eigenverft@outlook.com**
