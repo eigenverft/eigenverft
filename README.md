@@ -40,5 +40,5 @@
 ---
 
 <p align="center">
-  <img alt="Eigenverft mark" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/eigenverft-lockup-outlined-dev-sans-90-centered_manual.svg" width="420">
+  <img alt="Eigenverft mark" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/eigenverft-lockup-inter-600-90-centered.svg" width="420">
 </p>
