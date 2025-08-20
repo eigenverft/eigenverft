@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 511.83314 128"
+   width="3071"
+   height="768"
+   role="img"
+   aria-label="Eigenverft lockup — Inter 600 (90%) centered"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="eigenverft-lockup-inter-600-90-centered_man.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.19170984"
+     inkscape:cx="-52.162162"
+     inkscape:cy="1619.6351"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .navy{fill:#0A1B2E; stroke:#0A1B2E; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; paint-order:stroke fill}
+      .teal{fill:#00B3A6; stroke:#00B3A6; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; paint-order:stroke fill}
+      .word{fill:#0A1B2E; font-family:Inter, Manrope, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight:600; font-size:75.60000000000001px; letter-spacing:-0.8px; dominant-baseline:middle;}
+    </style>
+  </defs>
+  <g
+     transform="matrix(1.147924,0,0,1.147924,-14.919795,-2.364335)"
+     id="g3">
+    <path
+       class="navy"
+       d="M 101.875,40 35,75 51.875,104.375 96.25,78.75 Z"
+       id="path1" />
+    <path
+       class="navy"
+       d="m 76.25,8.75 -52.5,41.875 6.875,15.625 71.25,-38.125 z"
+       id="path2" />
+    <path
+       class="teal"
+       d="m 113.75,78.125 -50.625,28.75 h 38.75 z"
+       id="path3"
+       style="fill:#ff7a1a;fill-opacity:1;stroke:#ff7a1a;stroke-opacity:1" />
+  </g>
+  <text
+     class="word"
+     x="152"
+     y="64"
+     id="text3">Eigenverft</text>
+</svg>
