@@ -1,16 +1,44 @@
-## Hi there 👋
+<!-- Profile README for github.com/eigenverft -->
 
-<!--
-**eigenverft/eigenverft** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<h1 align="center">Eigenverft</h1>
+<p align="center">
+  <strong>Build. Fit-out. Ship.</strong><br/>
+  <em>From code to keel.</em>
+</p>
 
-Here are some ideas to get you started:
+<p align="center">
+  <a href="https://learn.microsoft.com/powershell/"><img alt="PowerShell" src="https://img.shields.io/badge/PowerShell-7.x-5391FE?style=for-the-badge&logo=powershell&logoColor=white"></a>
+  <a href="https://dotnet.microsoft.com/"><img alt=".NET" src="https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"></a>
+  <a href="https://learn.microsoft.com/aspnet/core/"><img alt="ASP.NET Core" src="https://img.shields.io/badge/ASP.NET%20Core-MVC%2FControllers-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"></a>
+  <a href="https://learn.microsoft.com/aspnet/core/blazor"><img alt="Blazor" src="https://img.shields.io/badge/Blazor-Server%2FWebAssembly-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"></a>
+  <a href="https://learn.microsoft.com/aspnet/core/razor-pages/"><img alt="Razor" src="https://img.shields.io/badge/Razor-Components%20%26%20Pages-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"></a>
+  <a href="https://github.com/features/actions"><img alt="CI" src="https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"></a>
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### What we ship
+- **Agent engines & tools** — orchestration, RAG, DevOps-ready.
+- **Web apps & services** — ASP.NET Core **MVC/Controllers**, **Blazor (Server/WASM)**, **Razor Components/Pages**.
+- **Developer UX** — klare APIs und reproduzierbare CI/CD-Pipelines.
+
+### Tech stack
+- **C# 12 / .NET 9**
+- **ASP.NET Core** (MVC/Controllers, **Blazor Server/WASM**, Razor Components/Pages), SignalR wo sinnvoll
+- **EF Core**, SQL Server / Azure SQL
+- **PowerShell 7.x** für Tooling/Automation
+- **GitHub Actions** für Build/Release
+- **Azure** (z. B. Key Vault, App Configuration) – *ohne* App Service Bindung
+
+### Conventions
+- Repo-Schema: `eigenverft-<area>-<name>`  
+  Beispiele: `eigenverft-agent`, `eigenverft-core`, `eigenverft-cloud`, `eigenverft-ui`, `eigenverft-ops`.
+
+### Contact
+- ✉️ **eigenverft@outlook.com**
+
+---
+
+<p align="center">
+  <img alt="Eigenverft mark" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/assets/logo-lockup.svg" width="420">
+</p>
