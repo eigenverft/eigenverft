@@ -1,6 +1,6 @@
 <!-- Profile README for github.com/eigenverft -->
 <p align="center">
-  <img alt="Eigenverft mark" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/eigenverft-lockup-inter-600-90-centered.svg" width="750">
+  <img alt="Eigenverft mark" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/eigenverft-lockup-inter-600-90-centered_man.svg" width="750">
 </p>
 
 <p align="center">
