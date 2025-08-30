@@ -23,7 +23,7 @@
 - **C# 12 / .NET 9**
 - **ASP.NET Core** (MVC/Controllers, **Blazor Server/WASM**, Razor Components/Pages), SignalR where it makes sense
 - **EF Core**, SQL Server
-- **PowerShell 5.x** 7.x** for tooling/automation
+- **PowerShell 5.x 7.x** for tooling/automation
 - **GitHub Actions** for build/release
 
 ### Conventions
