@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 128" width="4632" height="768" role="img" aria-label="Eigenverft logo lockup">
+  <defs>
+    <style>
+      .navy{fill:#0A1B2E; stroke:#0A1B2E; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; paint-order:stroke fill}
+      .teal{fill:#00B3A6; stroke:#00B3A6; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; paint-order:stroke fill}
+      .word{fill:#0A1B2E; font-family:Inter, Manrope, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight:600; font-size:84px; letter-spacing:-0.8px;}
+    </style>
+  </defs>
+  <!-- Icon -->
+  <g transform="translate(12.3434,7.6800) scale(1.147924) translate(-23.7500,-8.7500)">
+    <path class="navy" d="M101.875,40.0 L35.0,75.0 L51.875,104.375 L96.25,78.75 Z"/>
+    <path class="navy" d="M76.25,8.75 L23.75,50.625 L30.625,66.25 L101.875,28.125 Z"/>
+    <path class="teal" d="M113.75,78.125 L63.125,106.875 L101.875,106.875 Z"/>
+  </g>
+  <!-- Wordmark -->
+  <text class="word" x="152" y="92" dominant-baseline="alphabetic">Eigenverft</text>
+</svg>
