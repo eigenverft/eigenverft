@@ -30,10 +30,6 @@ Steer your own ship - locally
 - **PowerShell 5.x 7.x** for tooling/automation
 - **GitHub Actions** for build/release
 
-### Conventions
-- Repo naming: `eigenverft-<area>-<name>`  
-  Examples: `eigenverft-agent`, `eigenverft-core`, `eigenverft-cloud`, `eigenverft-ui`, `eigenverft-ops`.
-
 ### Contact
 - ✉️ **eigenverft@outlook.com**
 
