@@ -1,0 +1,3 @@
+C:\dev\github.com\eigenverft\eigenverft\media>"C:\Program Files\ImageMagick-7.1.2-Q16-HDRI\magick.exe" eigenverft-logo-v7-harbor-square_16_16.png eigenverft-logo-v7-harbor-square_32_32.png eigenverft-logo-v7-harbor-square_64_64.png eigenverft-logo-v7-harbor-square_128_128.png eigenverft-logo-v7-harbor-square_256_256.png -define icon C:\temp\eigenverft-logo-v7-harbor-square-win-output.ico
+
+C:\dev\github.com\eigenverft\eigenverft\media>"C:\Program Files\ImageMagick-7.1.2-Q16-HDRI\magick.exe" eigenverft-logo-v7-harbor-square_32_32.png -define icon C:\temp\eigenverft-logo-v7-harbor-square-favico-output.ico
