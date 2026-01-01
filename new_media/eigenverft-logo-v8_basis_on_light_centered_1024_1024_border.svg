@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 128 128"
+   width="1024"
+   height="1024"
+   role="img"
+   aria-label="Eigenverft logo — harbor"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="eigenverft-logo-v8_centered_1024_1024_border.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.32"
+     inkscape:cx="376.5625"
+     inkscape:cy="526.5625"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="mark" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .BlueCoat{fill:#06213a; stroke:#06213a; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; paint-order:stroke fill}
+      .TarInk{fill:#090e0f; stroke:#090e0f; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; paint-order:stroke fill}
+    </style>
+  </defs>
+  <g
+     id="mark"
+     transform="translate(12.3434,7.6800) scale(1.147924) translate(-23.7500,-8.7500)">
+    <path
+       class="BlueCoat"
+       d="M 103.80227,38.33129 32.863941,73.464678 50.764268,102.95162 97.835495,77.22897 Z"
+       id="path1" />
+    <path
+       class="BlueCoat"
+       d="M 76.620371,9.9929283 20.930462,52.027518 28.223189,67.712067 103.80234,29.441768 Z"
+       id="path2" />
+    <path
+       class="TarInk"
+       d="M 116.3988,76.601588 62.69782,105.46114 h 41.10445 z"
+       id="path3" />
+  </g>
+</svg>
