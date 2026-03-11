@@ -1615,6 +1615,8 @@ codex-task -Prompt "please repeat both filenames" -Session "foo99"
     }
 }
 
+<#
+
 # Load the script into the current PowerShell session
 . .\Codex.Slots.ps1
 
@@ -1728,3 +1730,5 @@ Invoke-CodexTask -Prompt "work across both directories" -Directory 'D:\project' 
 $result = Invoke-CodexTask -Prompt "read the dir and output the first file found" -Directory 'C:\temp' -SessionName 'foo99'
 $result.OutputLastMessage
 $result.LastAgentMessage
+
+#>
