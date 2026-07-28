@@ -14,6 +14,8 @@ Beispiele:
 <Root>.Cli.PackageInspector
 <Root>.Tool.RepositoryDoctor
 <Root>.CliFx.LegacyConverter
+<Root>.Build.Packaging
+<Root>.Generator.Configuration
 <Root>.WebLib.RequestFilters
 <Root>.BlazorLib.Components
 <Root>.WinLib.ProcessIsolation.RestrictedToken
@@ -59,11 +61,13 @@ Kategorien werden ausgewählt. Sie dürfen nicht spontan kombiniert, abgekürzt 
 |---|---|---|
 | `Web` | Anwendung | Browseranwendung, Webportal, Blazor-Anwendung oder Progressive Web App |
 | `Desktop` | Anwendung | Native oder desktoporientierte Anwendung, beispielsweise WinForms, WPF, WinUI oder Avalonia |
-| `Service` | Anwendung | Dauerhaft laufender Server, API, Worker, Proxy, Daemon oder Backenddienst |
+| `Service` | Anwendung | Serverseitig oder headless ausgeführtes Produkt, beispielsweise Server, API, Worker, Function, geplanter Job, Proxy, Daemon oder Backenddienst |
 | `Cli` | Anwendung | Eigenständig veröffentlichte Kommandozeilenanwendung für modernes .NET |
 | `Tool` | Anwendung/Paket | Als lokales oder globales .NET Tool über ein NuGet-Paket installiertes Kommando |
 | `CliFx` | Anwendung | Eigenständig veröffentlichte Kommandozeilenanwendung für klassisches .NET Framework |
 | `Module` | Automatisierung | PowerShell-Modul, das über ein Modulmanifest installiert und über Cmdlets konsumiert wird |
+| `Build` | Build-Time-Artefakt | Über NuGet oder direkten MSBuild-Import konsumierte Tasks, Targets, Props oder Erweiterungen des Build-, Pack- und Veröffentlichungsprozesses |
+| `Generator` | Build-Time-Artefakt | Roslyn Source Generator, der während der Kompilierung Quellcode erzeugt |
 | `Lib` | Bibliothek | Laufzeitneutraler oder breit kompatibler Bibliotheksvertrag, typischerweise auf Basis von .NET Standard |
 | `NetLib` | Bibliothek | Allgemeine Bibliothek für modernes .NET, also .NET Core beziehungsweise .NET 5 oder neuer |
 | `WebLib` | Bibliothek | Moderne Bibliothek für ASP.NET Core, HTTP, Middleware, Hosting, Razor oder allgemeine Webtechnologien |
@@ -95,6 +99,8 @@ Cli
 Tool
 CliFx
 Module
+Build
+Generator
 
 Lib
 NetLib
@@ -134,6 +140,10 @@ Archive
 | `DotnetTool` | Produktname und Installationsmechanismus werden unnötig ausgeschrieben | `Tool` |
 | `CliFxNet` | `Fx` bezeichnet bereits klassisches .NET Framework; `Net` ist redundant | `CliFx` |
 | `FxCli` | Verstößt gegen die festgelegte Wortreihenfolge | `CliFx` |
+| `MSBuildLib` | Ein MSBuild-Paket wird zur Build-Zeit konsumiert und ist keine Runtime-Bibliothek | `Build` |
+| `BuildLib` | Build-Time-Artefakt und Runtime-Bibliothek werden vermischt | `Build` oder passende Library-Kategorie |
+| `SourceGeneratorLib` | Ein Source Generator wird vom Compiler geladen und nicht als normale Runtime-Bibliothek konsumiert | `Generator` |
+| `RoslynLib` | Roslyn ist eine Implementierungstechnologie und unterscheidet Generator und normale Bibliothek nicht | `Generator` oder später bewusst freigegebene Analyzer-Kategorie |
 | `Library` | Verstößt gegen die festgelegte kurze Library-Grammatik | `Lib` |
 | `NetStandardLib` | .NET Standard wird bereits durch die neutrale Kategorie `Lib` ausgedrückt | `Lib` |
 | `ModernNetLib` | „Modern“ ist zeitabhängig und altert | `NetLib` |
@@ -167,11 +177,12 @@ Die Kategorie wird in der folgenden Reihenfolge bestimmt:
 |---:|---|---|
 | 1 | Ist das Repository eine besondere Repositoryform? | `Templates`, `Profile`, `Extension`, `Installer`, `Artifacts`, `Suite`, `Lab`, `Meta` oder `Archive` |
 | 2 | Ist das primäre Artefakt ein PowerShell-Modul? | `Module` |
-| 3 | Ist das Produkt ausführbar oder deploybar? | `Web`, `Desktop`, `Service`, `Cli`, `Tool` oder `CliFx` |
-| 4 | Ist es eine klassische .NET-Framework-Bibliothek? | Passende `*FxLib`-Kategorie |
-| 5 | Ist es eine moderne oder neutrale Bibliothek mit spezifischem öffentlichem Vertrag? | `BlazorLib`, `WebLib`, `DesktopLib`, `WinLib` oder `InteropLib` |
-| 6 | Ist modernes .NET Teil des öffentlichen Vertrags? | `NetLib` |
-| 7 | Ist der Vertrag laufzeitneutral beziehungsweise .NET-Standard-basiert? | `Lib` |
+| 3 | Wird das Artefakt vom Buildsystem oder Compiler konsumiert? | `Build` oder `Generator` |
+| 4 | Ist das Produkt ausführbar oder deploybar? | `Web`, `Desktop`, `Service`, `Cli`, `Tool` oder `CliFx` |
+| 5 | Ist es eine klassische .NET-Framework-Bibliothek? | Passende `*FxLib`-Kategorie |
+| 6 | Ist es eine moderne oder neutrale Bibliothek mit spezifischem öffentlichem Vertrag? | `BlazorLib`, `WebLib`, `DesktopLib`, `WinLib` oder `InteropLib` |
+| 7 | Ist modernes .NET Teil des öffentlichen Vertrags? | `NetLib` |
+| 8 | Ist der Vertrag laufzeitneutral beziehungsweise .NET-Standard-basiert? | `Lib` |
 
 Die erste eindeutig zutreffende Regel gewinnt.
 
@@ -217,7 +228,7 @@ Ein Repository mit mehreren eigenständigen Anwendungen wird beispielsweise als 
 |---|---|---|
 | Benutzer arbeitet hauptsächlich im Browser | `Web` | Browseroberfläche ist das eigentliche Produkt |
 | Benutzer arbeitet hauptsächlich mit einer nativen Oberfläche | `Desktop` | Desktopoberfläche ist das eigentliche Produkt |
-| Prozess läuft dauerhaft, serverseitig oder headless | `Service` | Server, API, Worker, Proxy oder Daemon ist das Produkt |
+| Produkt wird serverseitig, headless, ereignisgesteuert oder zeitgesteuert ausgeführt | `Service` | Server, API, Worker, Function, geplanter Job, Proxy, Daemon oder Backenddienst ist das Produkt |
 | Moderne .NET-Anwendung wird direkt über die Kommandozeile gestartet | `Cli` | Eigenständige CLI-Distribution; nicht über `dotnet tool install` konsumiert |
 | Kommando wird als lokales oder globales .NET Tool installiert | `Tool` | Installation und Verwaltung erfolgen über `dotnet tool` |
 | Klassische .NET-Framework-Anwendung wird über die Kommandozeile gestartet | `CliFx` | Eigenständige Konsolenanwendung für klassisches .NET Framework |
@@ -379,7 +390,7 @@ Die Kategorien unterscheiden sich durch Laufzeitgeneration und öffentliche Dist
 startet für einen Befehl und beendet sich
 → Cli, Tool oder CliFx
 
-läuft dauerhaft und wartet auf Arbeit
+wird serverseitig, headless, ereignisgesteuert oder zeitgesteuert ausgeführt
 → Service
 ```
 
@@ -430,9 +441,65 @@ Ein Modul darf intern ein CLI-Produkt starten. Die beiden Artefakte können getr
 
 ---
 
-## 8. Moderne und neutrale Bibliotheken
+## 8. Build-Time-Artefakte
 
-### 8.1 `Lib`
+Build-Time-Artefakte werden vom Buildsystem oder Compiler konsumiert. Sie sind weder ausführbare Endprodukte noch normale Runtime-Bibliotheken.
+
+### 8.1 `Build`
+
+`Build` bezeichnet Erweiterungen des Build-, Pack- oder Veröffentlichungsprozesses.
+
+Typische Inhalte:
+
+- MSBuild Tasks,
+- `.targets`-Dateien,
+- `.props`-Dateien,
+- NuGet-Pakete unter `build` oder `buildTransitive`,
+- Build-, Pack-, Publish- oder Versionierungslogik.
+
+Beispiele:
+
+```text
+<Root>.Build.Packaging
+<Root>.Build.Versioning
+<Root>.Build.Tasks
+```
+
+Typische Paketmerkmale können sein:
+
+```xml
+<DevelopmentDependency>true</DevelopmentDependency>
+<IncludeBuildOutput>false</IncludeBuildOutput>
+```
+
+Die Kategorie richtet sich nach der öffentlichen Konsumform. Eine Assembly mit MSBuild-Taskklassen bleibt `Build`, wenn sie ausschließlich durch MSBuild geladen und über Targets oder Props eingebunden wird.
+
+### 8.2 `Generator`
+
+`Generator` bezeichnet einen Roslyn Source Generator, der während der Kompilierung zusätzlichen Quellcode erzeugt.
+
+Beispiele:
+
+```text
+<Root>.Generator.Configuration
+<Root>.Generator.Serialization
+<Root>.Generator.DependencyInjection
+```
+
+Ein Generator ist keine normale `Lib`, weil sein öffentlicher Konsument der Compiler ist und nicht die Anwendungslaufzeit.
+
+| Situation | Kategorie |
+|---|---|
+| MSBuild Tasks, Targets oder Props erweitern den Buildprozess | `Build` |
+| NuGet-Paket liefert ausschließlich Build- oder BuildTransitive-Inhalte | `Build` |
+| Roslyn-Komponente erzeugt während der Kompilierung Quellcode | `Generator` |
+| Normale API wird zur Laufzeit oder aus Anwendungscode aufgerufen | passende Library-Kategorie |
+
+---
+
+## 9. Moderne und neutrale Bibliotheken
+
+### 9.1 `Lib`
 
 `Lib` bezeichnet eine laufzeitneutrale oder breit kompatible Bibliothek.
 
@@ -459,7 +526,7 @@ Beispiele:
 <Root>.Lib.PackageModel
 ```
 
-### 8.2 `NetLib`
+### 9.2 `NetLib`
 
 `NetLib` bezeichnet eine allgemeine Bibliothek für modernes .NET.
 
@@ -490,7 +557,7 @@ Beispiele:
 | Modernes .NET ist Teil des öffentlichen Produktvertrags | `NetLib` |
 | Projekt targetet nur modernes .NET und besitzt keine spezifischere Bindung | `NetLib` |
 
-### 8.3 `WebLib`
+### 9.3 `WebLib`
 
 `WebLib` bezeichnet eine moderne wiederverwendbare Webbibliothek.
 
@@ -513,7 +580,7 @@ Beispiele:
 <Root>.WebLib.Authentication
 ```
 
-### 8.4 `BlazorLib`
+### 9.4 `BlazorLib`
 
 `BlazorLib` bezeichnet eine Blazor-Komponentenbibliothek oder eine Razor Class Library mit Blazor als öffentlichem Produktvertrag.
 
@@ -543,7 +610,7 @@ Beispiele:
 | Razor Views ohne Blazor-Komponentenidentität | `WebLib` |
 | Razor Class Library mit Blazor-Komponenten | `BlazorLib` |
 
-### 8.5 `DesktopLib`
+### 9.5 `DesktopLib`
 
 `DesktopLib` bezeichnet eine moderne Bibliothek mit öffentlichem Desktop-UI-Vertrag.
 
@@ -563,7 +630,7 @@ Beispiele:
 <Root>.DesktopLib.Theming
 ```
 
-### 8.6 `WinLib`
+### 9.6 `WinLib`
 
 `WinLib` bezeichnet eine moderne Windows-spezifische Bibliothek ohne primären Desktop-UI-Vertrag.
 
@@ -585,7 +652,7 @@ Beispiele:
 <Root>.WinLib.Registry
 ```
 
-### 8.7 `InteropLib`
+### 9.7 `InteropLib`
 
 `InteropLib` wird nur verwendet, wenn Managed-/Native-Interop selbst die öffentlich angebotene Fähigkeit ist.
 
@@ -605,7 +672,7 @@ Beispiele:
 
 ---
 
-## 9. Klassisches .NET Framework
+## 10. Klassisches .NET Framework
 
 | Öffentlicher Vertrag | Kategorie |
 |---|---|
@@ -652,12 +719,14 @@ Eine allgemeine klassische Framework-Bibliothek wird als `WinFxLib` eingeordnet,
 
 ---
 
-## 10. Präzedenz bei Überschneidungen
+## 11. Präzedenz bei Überschneidungen
 
 Die stärkste öffentliche Konsumentenbindung bestimmt die Kategorie.
 
 | Prüfung | Ergebnis |
 |---|---|
+| Buildsystem konsumiert Tasks, Targets oder Props | `Build` |
+| Compiler konsumiert einen Source Generator | `Generator` |
 | Öffentliche Blazor-Komponenten | `BlazorLib` |
 | Öffentlicher Webvertrag | `WebLib` oder `WebFxLib` |
 | Öffentlicher Desktop-UI-Vertrag | `DesktopLib` oder `DesktopFxLib` |
@@ -670,6 +739,8 @@ Beispiele:
 
 | Produkt | Kategorie | Grund |
 |---|---|---|
+| NuGet-Paket mit MSBuild-Targets für den Packprozess | `Build` | Das Buildsystem ist der öffentliche Konsument |
+| Roslyn-Komponente erzeugt Quellcode | `Generator` | Der Compiler ist der öffentliche Konsument |
 | Blazor-Komponenten mit Browser-Interop | `BlazorLib` | Blazor-Komponenten bilden den öffentlichen Vertrag |
 | ASP.NET-Core-Middleware, die nur unter Windows läuft | `WebLib` | Nutzer konsumieren sie als Webkomponente |
 | WPF-Control-Library mit P/Invoke | `DesktopLib` | Desktop-UI ist die öffentliche Bindung |
@@ -682,7 +753,7 @@ Beispiele:
 
 ---
 
-## 11. Target Frameworks
+## 12. Target Frameworks
 
 Target Frameworks sind grundsätzlich Projekt- und Paketmetadaten.
 
@@ -697,6 +768,8 @@ Sie werden nicht automatisch Bestandteil des Produktnamens.
 | Modernes Windows-Target | `WinLib` oder `DesktopLib` |
 | Klassisches .NET Framework | passende `*FxLib`-Kategorie |
 | Klassische .NET-Framework-Konsolenanwendung | `CliFx` |
+| MSBuild- oder BuildTransitive-Paket | `Build`; das Target Framework des Hilfsprojekts ist nachrangig |
+| Roslyn Source Generator | `Generator`; das Target Framework dient der Compilerkompatibilität |
 
 ### Gemischtes modernes .NET und .NET Framework
 
@@ -721,7 +794,7 @@ Es wird keine spontane Mischkategorie erzeugt.
 
 ---
 
-## 12. Produktnamen
+## 13. Produktnamen
 
 Der Produktname beschreibt die fachliche Fähigkeit.
 
@@ -756,7 +829,7 @@ Produktnamen verwenden PascalCase.
 
 ---
 
-## 13. Varianten
+## 14. Varianten
 
 Varianten werden als separates Segment geschrieben:
 
@@ -788,7 +861,7 @@ Versionen und Entwicklungsstatus gehören in Projekt-, Paket- und Release-Metada
 
 ---
 
-## 14. Unterprojekte
+## 15. Unterprojekte
 
 Unterprojekte behalten den vollständigen Produktstamm:
 
@@ -815,7 +888,7 @@ Repository, Solution, Hauptprojekt, Assembly und Paket sollen möglichst denselb
 
 ---
 
-## 15. Schreibregeln
+## 16. Schreibregeln
 
 Alle Segmente verwenden PascalCase.
 
@@ -854,7 +927,7 @@ Etablierte Produktnamen dürfen ihre offizielle Schreibweise behalten.
 
 ---
 
-## 16. Verbindliche Kurzfassung
+## 17. Verbindliche Kurzfassung
 
 ```text
 Schema:
@@ -869,6 +942,8 @@ Cli
 Tool
 CliFx
 Module
+Build
+Generator
 
 Lib
 NetLib
@@ -903,6 +978,15 @@ Installation erfolgt über dotnet tool.
 
 CliFx:
 Eigenständige Kommandozeilenanwendung für klassisches .NET Framework.
+
+Service:
+Serverseitig oder headless ausgeführtes Produkt, einschließlich API, Worker, Function, geplantem Job, Proxy, Daemon oder Backenddienst.
+
+Build:
+Build-Time-Erweiterung mit MSBuild Tasks, Targets, Props oder NuGet-Inhalten unter build beziehungsweise buildTransitive.
+
+Generator:
+Roslyn Source Generator, der während der Kompilierung Quellcode erzeugt.
 
 Lib:
 Neutraler Vertrag, typischerweise .NET Standard.
