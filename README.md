@@ -1,37 +1,32 @@
-<!-- Profile README for github.com/eigenverft -->
 <p align="center">
-  <img alt="Eigenverft mark" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/eigenverft-lockup-inter-600-90-centered_man.svg" width="750">
+  <img alt="Eigenverft" src="https://raw.githubusercontent.com/eigenverft/eigenverft/main/docs/eigenverft-lockup-inter-600-90-centered_man.svg" width="750">
 </p>
 
 <p align="center">
-Steer your own ship - locally
+  <strong>Steer your own ship — locally.</strong>
 </p>
 
 <p align="center">
-  <a href="https://learn.microsoft.com/powershell/"><img alt="PowerShell" src="https://img.shields.io/badge/PowerShell-7.x-5391FE?style=for-the-badge&logo=powershell&logoColor=white"></a>
-  <a href="https://dotnet.microsoft.com/"><img alt=".NET" src="https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"></a>
-  <a href="https://learn.microsoft.com/aspnet/core/"><img alt="ASP.NET Core" src="https://img.shields.io/badge/ASP.NET%20Core-MVC%2FControllers-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"></a>
-  <a href="https://learn.microsoft.com/aspnet/core/blazor"><img alt="Blazor" src="https://img.shields.io/badge/Blazor-Server%2FWebAssembly-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"></a>
-  <a href="https://learn.microsoft.com/aspnet/core/razor-pages/"><img alt="Razor" src="https://img.shields.io/badge/Razor-Components%20%26%20Pages-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"></a>
-  <a href="https://github.com/features/actions"><img alt="CI" src="https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"></a>
+  Local-first developer tooling, automation, infrastructure, and reusable .NET / PowerShell building blocks.
 </p>
 
----
+## Public projects
 
-### What we ship
-- **Agent engines & tools** — orchestration, RAG, DevOps-ready.
-- **Web apps & services** — ASP.NET Core **MVC/Controllers**, **Blazor (Server/WASM)**, **Razor Components/Pages**.
-- **Developer UX** — clean APIs and reproducible CI/CD pipelines.
+| Project | What it is |
+|---|---|
+| [Eigenverft.Manifested.Package](https://github.com/eigenverft/Eigenverft.Manifested.Package) | Windows-focused PowerShell package-assignment engine for signed catalogs, verified artifacts, shared depots, and offline bootstrap. |
+| [Eigenverft.Manifested.Drydock](https://github.com/eigenverft/Eigenverft.Manifested.Drydock) | PowerShell module for Drydock bootstrap, offline module export, and local/CI automation workflows. |
+| [Eigenverft.Manifested.Agent](https://github.com/eigenverft/Eigenverft.Manifested.Agent) | PowerShell tooling around agent CLIs, named sessions, task execution, and lightweight local state. |
+| [Eigenverft.Manifested.Sandbox](https://github.com/eigenverft/Eigenverft.Manifested.Sandbox) | Repeatable Windows Sandbox and fresh-machine bootstrap with managed runtimes and state tracking. |
+| [Eigenverft.Distributed.Drydock](https://github.com/eigenverft/Eigenverft.Distributed.Drydock) | .NET command-line tooling for inspecting solutions/projects and exposing MSBuild properties to automation. |
+| [Eigenverft.NetLib.SerilogThemes](https://github.com/eigenverft/Eigenverft.NetLib.SerilogThemes) | Curated ANSI console themes for Serilog, including the Eigenverft dark terminal palette. |
+| [Eigenverft.Routed.RequestFilters](https://github.com/eigenverft/Eigenverft.Routed.RequestFilters) | Public Eigenverft request-filter project. |
+| [Eigenverft.Template.Agents](https://github.com/eigenverft/Eigenverft.Template.Agents) | Templates and reusable starting points for agent-oriented work. |
 
-### Tech stack
-- **C# 12 / .NET 9**
-- **ASP.NET Core** (MVC/Controllers, **Blazor Server/WASM**, Razor Components/Pages), SignalR where it makes sense
-- **EF Core**, SQL Server
-- **PowerShell 5.x 7.x** for tooling/automation
-- **GitHub Actions** for build/release
+## Elsewhere
 
-### Contact
-- ✉️ **eigenverft@outlook.com**
+The repository itself is intentionally small: it is the public GitHub profile and landing page for Eigenverft. Shared internal governance, naming, branding sources, working assets, and cross-repository material are maintained separately.
 
----
-
+- [Eigenverft on GitHub](https://github.com/eigenverft)
+- [Eigenverft landing page](https://eigenverft.github.io/eigenverft/)
+- Contact: **eigenverft@outlook.com**
